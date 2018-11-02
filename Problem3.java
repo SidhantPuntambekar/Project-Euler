@@ -14,8 +14,8 @@ public class Problem3
 
     public static boolean isPrime(long z)
     {
-        for (long i=2; i<=z; i++) 
-        {
+        for (long i=2; i<z; i++) 
+        { 
             if (z%i == 0) 
               return false;
         }
@@ -26,5 +26,6 @@ public class Problem3
     public static void main(String [] args)
     {
         System.out.println(PrimeNums());
+        System.out.println(isPrime(486847));
     }
 }

@@ -14,7 +14,11 @@ public class Problem3
 
     public static boolean isPrime(long z)
     {
-        for (long i=2; i<z; i++) 
+        if (z == 2)
+        {
+            return true;
+        }
+        for (long i=3; i<z; i+=2) 
         { 
             if (z%i == 0) 
               return false;
@@ -25,7 +29,13 @@ public class Problem3
 
     public static void main(String [] args)
     {
-        System.out.println(PrimeNums());
-        System.out.println(isPrime(486847));
+        for (long i = (long) Math.sqrt(x) - 1; i>=2; i = i - 2)
+        {
+            if (isPrime(i) && x%i == 0) 
+            {
+                System.out.println(i);
+                break;
+            }     
+        }
     }
 }

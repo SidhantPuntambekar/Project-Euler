@@ -6,25 +6,22 @@ public class Problem4
         String palindrome1 = number + "";
         for (int i = 0; i < palindrome1.length() / 2; i++)
         {
-            if (palindrome1.charAt(i) == palindrome1.charAt(palindrome1.length()-i-1))
-                return true;
+            if (palindrome1.charAt(i) != palindrome1.charAt(palindrome1.length()-i-1))
+                return false;
         }
+        return true;
     }
 
     public static int ReturnPalindrome()
     {   
         int doublePalindrome = 0;
         int b = 0; 
-        for (int i = 999; i <100; i--)
+        for (int i = 999; i > 100; i--)
         {
-            for (int j = 999; j <100; j--)
+            for (int j = 999; j > 100; j--)
             {
-                doublePalindrome = i*j;
-                if (isPalindrome(doublePalindrome))
-                {
-                    if (doublePalindrome > b)
-                        return doublePalindrome; 
-                }
+                if (isPalindrome(i*j) && i*j > doublePalindrome)
+                    doublePalindrome = i*j;
             }
         }
         return doublePalindrome;

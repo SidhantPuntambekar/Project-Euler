@@ -1,27 +1,33 @@
 public class Problem4
 {
-    public static int ReturnPalindrome()
-    {   
-        int doublePalindrome = 0; 
-        for (int i = 999; i <100; i--)
+
+    public static boolean isPalindrome(int number)
+    {
+        String palindrome1 = number + "";
+        for (int i = 0; i < palindrome1.length() / 2; i++)
         {
-            for (int j = 999; i <100; i--)
-            {
-                if (isPalindrome(i*j))
-                    doublePalindrome = i*j;
-            }
+            if (palindrome1.charAt(i) == palindrome1.charAt(palindrome1.length()-i-1))
+                return true;
         }
-        return doublePalindrome; 
     }
 
-    public static boolean isPalindrome(int n)
-    {
-        int[] nums = nums[doublePalindrome.length];
-        
-        if (n % 2 != 0)
-            return true;
-        else
-            return false; 
+    public static int ReturnPalindrome()
+    {   
+        int doublePalindrome = 0;
+        int b = 0; 
+        for (int i = 999; i <100; i--)
+        {
+            for (int j = 999; j <100; j--)
+            {
+                doublePalindrome = i*j;
+                if (isPalindrome(doublePalindrome))
+                {
+                    if (doublePalindrome > b)
+                        return doublePalindrome; 
+                }
+            }
+        }
+        return doublePalindrome;
     }
 
     public static void main(String[] args)

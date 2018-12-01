@@ -1,12 +1,12 @@
 public class Problem7
 {
-    public static boolean isPrime()
+    public static boolean isPrime(long z)
     {
         if (z == 2)
         {
             return true;
         }
-        for (long i=3; i<z; i+=2) 
+        for (long i=3; i<z; i++) 
         { 
             if (z%i == 0) 
               return false;
@@ -14,16 +14,20 @@ public class Problem7
           return true;
     }
 
-    public static int LongPrime()
-    {
-        for (int i = 0; i <=100000000; i++)
-        {
-            int count = 0;
-            
-        }
-    }
     public static void main (String[] args)
     {
-
+        int count = 0;
+        for (int i = 2; i <=100000000; i++)
+        {
+            if (isPrime(i))
+            {
+                count++;
+            }
+            if (count == 10001)
+            {
+                System.out.println(i);
+                break;
+            }
+        }
     }
 }

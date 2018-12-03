@@ -6,12 +6,14 @@ public class Problem7
         {
             return true;
         }
-        for (long i=3; i<z; i++) 
-        { 
-            if (z%i == 0) 
-              return false;
+        for (int i = 2; i < z; i++)
+        {
+            if (z%i == 0)
+            {
+                return false; 
+            }
         }
-          return true;
+        return true;
     }
 
     public static void main (String[] args)

@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.Scanner; 
 public class Problem8
 {
-    public static int ThirteenMultiples(int[] a)
+    public static long ThirteenMultiples(int[] a)
     {
         long product = 1;
         for (int i = 0; i < a.length; i++) 

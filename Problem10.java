@@ -2,30 +2,28 @@ public class Problem10
 {
     public static boolean isPrime(long z)
     {
-        if (z == 2)
-        {
+        if (z < 2) 
+            return false;
+        else if (z == 2) 
             return true;
-        }
-        for (int i = 2; i < z; i++)
+        for (int i = 2; i < Math.pow(z, 0.5) + 1; i++) 
         {
-            if (z%i == 0)
-            {
-                return false; 
-            }
+            if (z % i == 0)
+                return false;
         }
         return true;
     }
 
     public static void main(String[] args)
     {
-        int sum = 0;  
+        long sum = 0;  
         for (int i = 3; i < 2000000; i+=2)
         {
-            sum += i;
+            if (isPrime(i))
+            {
+                sum += i;
+            }
         }
-        if (isPrime(sum))
-        {
-            System.out.println(sum);
-        }
+        System.out.println(sum);
     }
 }

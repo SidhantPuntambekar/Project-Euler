@@ -21,11 +21,11 @@ public class Problem10
         int sum = 0;  
         for (int i = 3; i < 2000000; i+=2)
         {
-            if (isPrime(i))
-            {
-                sum += i;
-            }
+            sum += i;
         }
-        System.out.println(sum);
+        if (isPrime(sum))
+        {
+            System.out.println(sum);
+        }
     }
 }

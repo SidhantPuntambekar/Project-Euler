@@ -17,7 +17,7 @@ public class Problem10
     public static void main(String[] args)
     {
         long sum = 0;  
-        for (int i = 3; i < 2000000; i++)
+        for (int i = 1; i < 2000000; i++)
         {
             if (isPrime(i))
             {

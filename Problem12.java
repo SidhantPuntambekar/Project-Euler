@@ -14,7 +14,7 @@ public class Problem12
     public static void main (String[] args)
     {
         int a = 0;
-        int x = 2;
+        int x = 1;
         boolean bool = false;
         while (!bool)
         {

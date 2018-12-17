@@ -5,7 +5,8 @@ public class Problem13
 {
     public static void main(String[] args)
     {
-        File file = new File("Problem8Input.txt"); 
+        File file = new File("Problem13Input.txt"); 
         Scanner sc = new Scanner(file);
+        BigInteger BigInt = sc.nextBigInteger();
     }
 }

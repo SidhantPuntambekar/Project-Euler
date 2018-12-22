@@ -112,6 +112,7 @@ public class Problem13
                 BigInteger BigInt = new BigInteger(bigNumber[i]);
 			    sum = sum.add(BigInt);
             }
-            System.out.println(sum);
+            String sumString = sum.toString();
+            System.out.println(sumString.substring(0,10));
         }
     }

@@ -1,6 +1,8 @@
 public class Problem14
 {
-    public static int CollatzSequence(long n)
+    private static final int Number = 1000000; 
+    private static final int[] Terms = new int[Number]; 
+    public static long CollatzSequence(long n)
     {
         if (n%2 == 0)
             return n/2;
@@ -10,24 +12,34 @@ public class Problem14
 
     public static int terms(long n)
     {
-        int temp = n; 
-        int count = 0; 
+        long temp = n; 
+        int term = 0; 
         while (temp > 1)
         {
-            temp = next(temp);  
-                if (temp < NUMBER && TERMS[(int)temp] != 0)
+            temp = terms(temp);  
+                if (temp < Number && Terms[(int)temp] != 0)
                 {  
-                     count += TERMS[(int)temp];  
+                     term += Terms[(int)temp];  
                      break;  
                 }  
-                count++;    
+                term++;    
         }
-        TERMS[(int)n] = count;  
-        return count;  
+        Terms[(int)n] = term;  
+        return term;  
     }
-    
+
     public static void main(String[] args)
     {
-        for (int i = 1000000; i <)
+        long largestNum = 0;  
+        int num = 0;  
+        for (int i = 1; i < Number; i++){  
+            long terms = terms(i);   
+            if (terms > largestNum){  
+                    largestNum = terms;  
+                    num = i;  
+            }  
+        }  
+        System.out.println(num);
+        System.out.println(largestNum);  
     }
 }

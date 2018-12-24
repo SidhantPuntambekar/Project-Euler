@@ -16,13 +16,13 @@ public class Problem14
         int term = 0; 
         while (temp > 1)
         {
-            temp = terms(temp);  
-                if (temp < Number && Terms[(int)temp] != 0)
-                {  
-                     term += Terms[(int)temp];  
-                     break;  
-                }  
-                term++;    
+            temp = CollatzSequence(temp);  
+            if (temp < Number && Terms[(int)temp] != 0)
+            {  
+                term += Terms[(int)temp];  
+                break;  
+            }  
+            term++;    
         }
         Terms[(int)n] = term;  
         return term;  

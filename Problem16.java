@@ -1,21 +1,19 @@
+import java.math.BigInteger;
 public class Problem16
 {
-    public static double PowerSum(double a, double b)
+    public static String PowerSum()
     {
-        double Power = 0;
-        Power = Math.pow(a,b);
-        return Power;
+        String temp = BigInteger.ONE.shiftLeft(1000).toString();
         int sum = 0;
-        String PowerString = (String) Power;
-        for (int i = 0; i < PowerString.length(); i++)
+        for (int i = 0; i < temp.length(); i++)
         {
-            
-        } 
+            sum += temp.charAt(i) - '0';
+        }
+        return Integer.toString(sum);
     }
 
     public static void main(String[] args)
     {
-        System.out.println(PowerSum(2,15));
-        System.out.println(PowerString);
+        System.out.println(PowerSum());
     }
 }

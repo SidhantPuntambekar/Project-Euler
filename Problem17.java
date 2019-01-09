@@ -10,10 +10,11 @@ public class Problem17()
         return sum;
     }
 
-    public static int returnCharacters()
+    public static int returnCharacters(int n)
     {
         int characters = 0;
-        switch (n) {
+        switch (n) 
+        {
             case 0: letters = 0; break;
             case 1: letters = "One".length(); break;
             case 2: letters = "Two".length(); break;
@@ -53,9 +54,21 @@ public class Problem17()
             case 900: letters = "NineHundred".length(); break;
             case 1000: letters = "OneThousand".length(); break;
         }
+        if (letters == 0){
+            int length = (int)(Math.log10(n)+1); //how many digits does the number have? 
+            int splitNumber;
+            for (int i=1;i<=length;i++){
+                if (i == 3) letters += 3; //add "and" to the total letters if necessary
+                splitNumber = (int) (n % Math.pow(10, i)); 
+                letters += getLetters(splitNumber);
+                n -= splitNumber;
+            }
+        }
+        return letters;
     }
+
     public static void main(String[] args)
     {
-
+        System.out.println(countLetters(1000));
     }
 }

@@ -1,4 +1,4 @@
-public class Problem17()
+public class Problem17
 {
     public static long countCharacters(int n)
     {
@@ -12,7 +12,7 @@ public class Problem17()
 
     public static int returnCharacters(int n)
     {
-        int characters = 0;
+        int letters = 0;
         switch (n) 
         {
             case 0: letters = 0; break;
@@ -60,7 +60,7 @@ public class Problem17()
             for (int i=1;i<=length;i++){
                 if (i == 3) letters += 3; //add "and" to the total letters if necessary
                 splitNumber = (int) (n % Math.pow(10, i)); 
-                letters += getLetters(splitNumber);
+                letters += returnCharacters(splitNumber);
                 n -= splitNumber;
             }
         }
@@ -69,6 +69,6 @@ public class Problem17()
 
     public static void main(String[] args)
     {
-        System.out.println(countLetters(1000));
+        System.out.println(countCharacters(1000));
     }
 }

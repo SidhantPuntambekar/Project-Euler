@@ -7,7 +7,7 @@ public class Problem18
 
     public static String run()
     {
-        private int[][] triangle =
+        int[][] triangle =
         {
             {75},
             {95,64},
@@ -23,13 +23,15 @@ public class Problem18
             {70,11,33,28,77,73,17,78,39,68,17,57},
             {91,71,52,38,17,14,91,43,58,50,27,29,48},
             {63,66, 4,68,89,53,67,30,73,16,69,87,40,31},
-            { 4,62,98,27,23, 9,70,98,73,93,38,53,60, 4,23},
+            {4,62,98,27,23, 9,70,98,73,93,38,53,60, 4,23},
         };
 
-        for (int i = triangle.length - 2; i <= 0; i--)
+        for (int row = triangle.length - 2; row >= 0; row--)
         {
-            for (int j = 0; j < triangle[i].length; j++)
-				triangle[i][j] += Math.max(triangle[i + 1][j], triangle[i + 1][j + 1]);
+            for (int column = 0; column < triangle[row].length; column++)
+            {
+                triangle[row][column] += Math.max(triangle[row + 1][column], triangle[row + 1][column + 1]);
+            }
 		}
 		return Integer.toString(triangle[0][0]);
     }

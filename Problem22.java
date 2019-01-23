@@ -11,6 +11,10 @@ public class Problem22
             lines.add(sc.nextLine());
         }
         String[] arr = lines.toArray(new String[0]);
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i].replaceAll(Pattern.quote("\""), "");
+        }
     }
 
     public static int values()

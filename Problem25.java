@@ -13,7 +13,6 @@ public class Problem25
             term1 = term2;
             term2 = sum;
         }
-        String sum1 = sum.toString();
         System.out.println(sum1);
     }
 }

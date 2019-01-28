@@ -17,14 +17,16 @@ public class Problem26
     public static int recurringNumber(int num) {  
         int[] array = new int[num+1];  
         int index = 1;  
-        int mod = 1;  
-        while(mod != 0 && array[mod] == 0){  
-             array[mod]=index++;  
-             mod = mod * 10 % num;  
+        int position = 1;  
+        while(position != 0 && array[position] == 0)
+        {  
+             array[position] = index++;  
+             position = position * 10 % num;  
         }  
-        if (mod == 0){  
-             return 0;  
+        if (position == 0)
+        {  
+            return 0;  
         }  
-        return index-array[mod]; 
+        return index-array[position]; 
     }
 }

@@ -12,7 +12,8 @@ public class Problem25
             BigInteger sum = term1.add(term2);
             term1 = term2;
             term2 = sum;
+            index++;
         }
-        System.out.println(sum1);
+        System.out.println(index);
     }
 }

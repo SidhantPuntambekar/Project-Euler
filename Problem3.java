@@ -1,7 +1,7 @@
 public class Problem3
 {
     private static long x = 600851475143L;
-
+    
     public static long PrimeNums()
     {
         for (long z = (int) Math.sqrt(x); z >= 1; z--)

@@ -1,6 +1,5 @@
 public class Problem2
 {
-
     public static void main(String[] args)
     {
         int EvenSum = 0;

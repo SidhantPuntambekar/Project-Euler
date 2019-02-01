@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 public class Problem33
 {
     public static void main(String[] args)
@@ -12,11 +13,19 @@ public class Problem33
                 int numerator2 = numerator / 10; 
                 int denominator1 = denominator % 10;
                 int denominator2 = denominator / 10;
-                if (numerator2 == denominator1 && numerator1 * denominator == numerator * denominator2 || numerator1 == denominator2 && numerator2 * denominator == numerator * denominator1)
-                    numerator = j;
-                    denominator = i;
+                if (numerator2 == denominator1 && numerator1 * i == j * denominator2 || numerator1 == denominator2 && numerator2 * i == j * denominator1)
+                    numerator *= j;
+                    denominator *= i;
             }
         }
-        System.out.println(denominator);
+        System.out.println(denominator/gcdThing(numerator,denominator));
+    }
+
+    private static int gcdThing(int a, int b) 
+    {
+        BigInteger b1 = BigInteger.valueOf(a);
+        BigInteger b2 = BigInteger.valueOf(b);
+        BigInteger gcd = b1.gcd(b2);
+        return gcd.intValue();
     }
 }

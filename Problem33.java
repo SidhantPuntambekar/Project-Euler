@@ -21,11 +21,10 @@ public class Problem33
         System.out.println(denominator/gcdThing(numerator,denominator));
     }
 
-    private static int gcdThing(int a, int b) 
+    private static int gcdThing(int number1, int number2) 
     {
-        BigInteger b1 = BigInteger.valueOf(a);
-        BigInteger b2 = BigInteger.valueOf(b);
-        BigInteger gcd = b1.gcd(b2);
-        return gcd.intValue();
+        if (number2 == 0) 
+            return number1; 
+        return gcdThing(number2, number1%number2);
     }
 }

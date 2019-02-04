@@ -13,7 +13,7 @@ public class Problem33
                 int numerator2 = numerator / 10; 
                 int denominator1 = denominator % 10;
                 int denominator2 = denominator / 10;
-                if (numerator2 == denominator1 && numerator1 * i == j * denominator2 || numerator1 == denominator2 && numerator2 * i == j * denominator1)
+                if (numerator2 == denominator1 && numerator1 * j == i * denominator2 || numerator1 == denominator2 && numerator2 * i == j * denominator1)
                     numerator *= j;
                     denominator *= i;
             }

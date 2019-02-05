@@ -3,7 +3,7 @@ public class Problem35
     public static void main(String[] args) 
     {
         int count = 0; 
-        for (long i = 0; i < 10000000; i++)
+        for (long i = 0; i < 10000000; i+=2)
         {
             if (isCircularPrime(i))
             {
@@ -18,7 +18,7 @@ public class Problem35
         String possibleCircularPrime = Long.toString(y);
         for (int i = 0; i < possibleCircularPrime.length(); i++) 
         {
-			if (!isPrime[Long.parseLong(possibleCircularPrime.substring(i) + possibleCircularPrime.substring(0, i))])
+			if (!isPrime(Long.parseLong(possibleCircularPrime.substring(i) + possibleCircularPrime.substring(0, i))))
 				return false;
         }
         return true;
@@ -39,5 +39,4 @@ public class Problem35
         }
         return true;
     }
-
 }

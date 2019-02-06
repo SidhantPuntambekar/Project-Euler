@@ -15,7 +15,7 @@ public class Problem36
 
     public static boolean isPalindromicBaseTwo(int x)
     {
-        if (isPalindromicBaseTen(x) && isPalindromicBaseTenString(Integer.toBinaryString(x)))
+        if (isPalindromicBaseTenString(Integer.toBinaryString(x)))
         {
             return true;
         }
@@ -35,6 +35,6 @@ public class Problem36
 
     public static boolean isPalindromicBaseTenString(String N)
     {
-        return new StringBuilder(N).reverse().toString().equals(""+N);
+        return new StringBuilder(N).reverse().toString().equals("" + N);
     }
 }

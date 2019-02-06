@@ -15,11 +15,17 @@ public class Problem36
 
     public static boolean isPalindromicBaseTwo(int x)
     {
-
+        
     }
 
     public static boolean isPalindromicBaseTen(int x)
     {
-
+        String palindrome1 = number + "";
+        for (int i = 0; i < palindrome1.length() / 2; i++)
+        {
+            if (palindrome1.charAt(i) != palindrome1.charAt(palindrome1.length()-i-1))
+                return false;
+        }
+        return true;
     }
 }

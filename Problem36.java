@@ -15,17 +15,26 @@ public class Problem36
 
     public static boolean isPalindromicBaseTwo(int x)
     {
-        
+        if (isPalindromicBaseTen(x) && isPalindromicBaseTenString(Integer.toBinaryString(x)))
+        {
+            return true;
+        }
+        return false;
     }
 
     public static boolean isPalindromicBaseTen(int x)
     {
-        String palindrome1 = number + "";
+        String palindrome1 = x + "";
         for (int i = 0; i < palindrome1.length() / 2; i++)
         {
             if (palindrome1.charAt(i) != palindrome1.charAt(palindrome1.length()-i-1))
                 return false;
         }
         return true;
+    }
+
+    public static boolean isPalindromicBaseTenString(String N)
+    {
+        return new StringBuilder(N).reverse().toString().equals(""+N);
     }
 }

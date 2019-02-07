@@ -2,28 +2,38 @@ public class Problem37
 {
     public static void main(String[] args) 
     {
-        long sum = 0;
-        for (int i = 0; i < 100000; i++)
-        {
-            if (isTruncatablePrime(i))
-                sum += i;
+        int counter = 0;
+        int sum = 0;
+        int i = 10;
+        while (counter < 11) {
+            if (isPrime(i)) {
+                if (isTruncatablePrime(Integer.toString(i))) {
+                    sum += i;
+                    counter++;
+                }
+            }
+            i++;
         }
         System.out.println(sum);
     }
 
-    public static boolean isTruncatablePrime(int n)
+    public static boolean isTruncatablePrime(String x) 
     {
-        for (long i = 10; i <= n; i *= 10) 
+        int num = 0;
+        for (int i = 0; i < x.length(); i++) 
         {
-            if (!isPrime(n % (int)i))
+            num = Integer.parseInt(x.substring(0, x.length() - i));
+            if (!isPrime(num)) 
+            {
                 return false;
-        }
-        for (; n != 0; n /= 10) 
-        {
-            if (!isPrime(n))
+            }
+            num = Integer.parseInt(x.substring(i, x.length()));
+            if (!isPrime(num)) 
+            {
                 return false;
+            }
         }
-        return true;    
+        return true;
     }
 
     public static boolean isPrime(long z)

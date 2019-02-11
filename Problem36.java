@@ -5,7 +5,7 @@ public class Problem36
         int sum = 0;
         for (int i = 0; i < 1000000; i++)
         {
-            if (isPalindromicBaseTen(i) == isPalindromicBaseTwo(i))
+            if (isPalindromicBaseTen(i) && isPalindromicBaseTwo(i))
             {
                 sum += i;
             }
@@ -15,11 +15,7 @@ public class Problem36
 
     public static boolean isPalindromicBaseTwo(int x)
     {
-        if (isPalindromicBaseTenString(Integer.toBinaryString(x)))
-        {
-            return true;
-        }
-        return false;
+        return isPalindromicString(Integer.toBinaryString(x));
     }
 
     public static boolean isPalindromicBaseTen(int x)
@@ -33,7 +29,7 @@ public class Problem36
         return true;
     }
 
-    public static boolean isPalindromicBaseTenString(String N)
+    public static boolean isPalindromicString(String N)
     {
         return new StringBuilder(N).reverse().toString().equals("" + N);
     }

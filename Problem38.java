@@ -4,11 +4,12 @@ public class Problem38
     public static void main(String[] args) 
     {
         int max = -1; 
-        for (int i = 2; i < 9; i++)
+        String concatenated = "";
+        for (int i = 2; i <= 9; i++)
         {
-            for (int j = 1; j < Math.pow(10,9 / i); i++)
+            for (int j = 1; j < Math.pow(10, 9/i); j++)
             {
-                String concatenated = "";
+                concatenated = "";
                 for (int k = 1; k <= i; k++)
                 {
                     concatenated += i * j;
@@ -19,7 +20,7 @@ public class Problem38
                 }
             }
         }
-        System.out.println(max);
+        System.out.println(concatenated);
     }
 
     public static boolean isPandigital(String x) 

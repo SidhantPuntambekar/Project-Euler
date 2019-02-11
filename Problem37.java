@@ -5,11 +5,12 @@ public class Problem37
         int counter = 0;
         int sum = 0;
         int i = 10;
-        while (counter < 11) {
+        while (counter < 500) {
             if (isPrime(i)) {
                 if (isTruncatablePrime(Integer.toString(i))) {
                     sum += i;
                     counter++;
+                    //System.out.println(i);
                 }
             }
             i++;

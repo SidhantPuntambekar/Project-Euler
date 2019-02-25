@@ -2,18 +2,15 @@ public class Problem37
 {
     public static void main(String[] args) 
     {
-        int counter = 0;
-        int sum = 0;
-        int i = 10;
-        while (counter < 500) {
-            if (isPrime(i)) {
-                if (isTruncatablePrime(Integer.toString(i))) {
-                    sum += i;
-                    counter++;
-                    System.out.println(i);
-                }
+        int sum = 0; 
+        for (int count = 0, n = 10; count < 11; n++) 
+        {
+            if (isTruncatablePrime(n + "")) 
+            {
+                sum += n;
+                count++;
+                System.out.println(n);
             }
-            i++;
         }
         System.out.println(sum);
     }

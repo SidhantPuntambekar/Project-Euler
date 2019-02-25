@@ -10,7 +10,7 @@ public class Problem37
                 if (isTruncatablePrime(Integer.toString(i))) {
                     sum += i;
                     counter++;
-                    //System.out.println(i);
+                    System.out.println(i);
                 }
             }
             i++;

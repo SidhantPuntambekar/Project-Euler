@@ -3,38 +3,51 @@ public class Problem41
 {
     public static void main(String[] args) 
     {
-        int primeNumber = 0;
-        for (int i = 1; i < 1000000; i++)
+        int i = 7654321;
+        while (i > 20) 
         {
-            if (isPrime(i) && isPandigital(i + "")
+            if (isPandigital(i + "") && isPrime(i)) 
             {
-                primeNumber += i;
-            }
+				break;
+			}
+            i -= 2;
         }
-        System.out.println(primeNumber);
+        System.out.println(i);
     }
 
-    public static boolean isPrime(int z)
+    public static boolean isPrime(int number) 
     {
-        if (z == 2)
+		boolean prime = true;
+		double limit = Math.sqrt(number);
+        if (number == 1) 
         {
-            return true;
-        }
-        for (long i=3; i<z; i+=2) 
-        { 
-            if (z%i == 0) 
-              return false;
-        }
-          return true;
-    } 
-
-    public static boolean isPandigital(String x) 
-    {
-		if (x.length() != 9)
-			return false;
-		char[] temp = x.toCharArray();
-		Arrays.sort(temp);
-		return new String(temp).equals("123456789");
+			prime = false;
+        } 
+        else 
+        {
+            for (int i = 2; i <= limit; i++) 
+            {
+                if (number % i == 0) 
+                {
+					prime = false;
+					break;
+				}
+			}
+		}
+		return prime;
 	}
 
+    public static boolean isPandigital(String number) {
+		boolean pandigital = true;
+		int length = number.length();
+        for (int i = 1; i <= length; i++) 
+        {
+            if (!number.contains(i + "")) 
+            {
+				pandigital = false;
+				break;
+			}
+		}
+		return pandigital;
+	}
 }

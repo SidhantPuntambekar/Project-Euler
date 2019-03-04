@@ -4,9 +4,10 @@ public class Problem41
     public static void main(String[] args) 
     {
         int primeNumber = 0;
-        for (int i = 0; i < 1000000; i++)
+        long primeNumber1 = primeNumber;
+        for (int i = 1; i < 1000000; i++)
         {
-            if (isPrime(primeNumber) && isPandigital(primeNumber + ""))
+            if (isPrime(primeNumber1) && isPandigital(primeNumber + ""))
             {
                 primeNumber += i;
             }

@@ -4,10 +4,9 @@ public class Problem41
     public static void main(String[] args) 
     {
         int primeNumber = 0;
-        long primeNumber1 = primeNumber;
         for (int i = 1; i < 1000000; i++)
         {
-            if (isPrime(primeNumber1) && isPandigital(primeNumber + ""))
+            if (isPrime(i) && isPandigital(i + "")
             {
                 primeNumber += i;
             }
@@ -15,7 +14,7 @@ public class Problem41
         System.out.println(primeNumber);
     }
 
-    public static boolean isPrime(long z)
+    public static boolean isPrime(int z)
     {
         if (z == 2)
         {

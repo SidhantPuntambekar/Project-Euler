@@ -2,8 +2,26 @@ public class Problem42
 {
     public static void main(String[] args) 
     {
-        
+        int count = 0;
+        for (String word : words)
+        {
+            if (isTriangularNumber(wordValue(word)))
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
+
+    public static boolean isTriangularNumber(int x) {
+		for (int i = 1; ; i++) {
+			int t = i * (i + 1) / 2;
+			if (t == x)
+				return true;
+			if (t > x)
+				return false;
+		}
+	}
 
     public static int wordValue(String s) 
     {

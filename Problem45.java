@@ -1,6 +1,6 @@
 public class Problem45
 {
-    public static public static void main(String[] args) 
+    public static void main(String[] args) 
     {
         int triangle = 286;
         int pentagonal = 166;
@@ -27,6 +27,7 @@ public class Problem45
 				hexagonal++;
 			}
         }
+        System.out.println((long) triangle * (triangle + 1) / 2);
     }
     
 }

@@ -1,7 +1,20 @@
 public class Problem46
 {
-    
-	public static boolean isGoldbach(int n) 
+    public static void main(String[] args)
+    {
+		int i = 39;
+        while(isGoldbach(i)) 
+        {
+			i+=2;
+            while(isPrime(i)) 
+            {
+				i+=2;
+			}
+		}
+		System.out.println(i);
+	}
+	
+    public static boolean isGoldbach(int n) 
     {
         for(int i = 1; 2 * i * i < n; i++) 
         {

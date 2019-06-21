@@ -6,6 +6,11 @@ public class Problem47
         
     }
 
+    public static boolean hasFourPrimeFactors(int n)
+    {
+        return countDistinctPrimeFactors(n) == 4;
+    }
+
     public static int countDistinctPrimeFactors(int j) 
     {
 		int count = 0;

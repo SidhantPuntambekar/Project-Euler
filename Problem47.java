@@ -2,11 +2,13 @@ public class Problem47
 {
     public static void main(String[] args) 
     {
-        for (int i = 2; ; i++) 
-        {
+		int answer = 0;
+        for (int i = 100000; i< 1000000; i++) 
+        { 
 			if (hasFourPrimeFactors(i + 0) && hasFourPrimeFactors(i + 1) && hasFourPrimeFactors(i + 2) && hasFourPrimeFactors(i + 3))
-				System.out.println(Integer.toString(i));
+				answer = i;
 		}
+		System.out.println(answer);
     }
 
     public static boolean hasFourPrimeFactors(int n)

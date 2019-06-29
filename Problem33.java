@@ -9,10 +9,10 @@ public class Problem33
         {
             for (int j = 10; j < i; j++)
             {
-                int numerator1 = numerator % 10;
-                int numerator2 = numerator / 10; 
-                int denominator1 = denominator % 10;
-                int denominator2 = denominator / 10;
+                int numerator1 = j % 10;
+                int numerator2 = j / 10; 
+                int denominator1 = i % 10;
+                int denominator2 = i / 10;
                 if (numerator2 == denominator1 && numerator1 * j == i * denominator2 || numerator1 == denominator2 && numerator2 * i == j * denominator1)
                     numerator *= j;
                     denominator *= i;
@@ -21,10 +21,15 @@ public class Problem33
         System.out.println(denominator/gcdThing(numerator,denominator));
     }
 
-    private static int gcdThing(int number1, int number2) 
+    public static int gcdThing(int x, int y) 
     {
-        if (number2 == 0) 
-            return number1; 
-        return gcdThing(number2, number1%number2);
+        if (x < 0 || y < 0)
+			throw new IllegalArgumentException("Negative number");
+		while (y != 0) {
+			int z = x % y;
+			x = y;
+			y = z;
+		}
+		return x;
     }
 }

@@ -9,29 +9,23 @@ public class Problem37
             {
                 sum += n;
                 count++;
-                System.out.println(n);
             }
         }
         System.out.println(sum);
     }
 
-    public static boolean isTruncatablePrime(String x) 
+    public static boolean isTruncatablePrime(int n) 
     {
-        int num = 0;
-        for (int i = 0; i < x.length(); i++) 
+        for (long i = 10; i <= n; i *= 10) 
         {
-            num = Integer.parseInt(x.substring(0, x.length() - i));
-            if (!isPrime(num)) 
-            {
-                return false;
-            }
-            num = Integer.parseInt(x.substring(i, x.length()));
-            if (!isPrime(num)) 
-            {
-                return false;
-            }
+			if (!isPrime(n % (int)i))
+				return false;
         }
-        return true;
+        for (; n != 0; n /= 10) 
+        {
+			if (!isPrime(n))
+				return false;
+		}
     }
 
     public static boolean isPrime(long z)

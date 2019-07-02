@@ -6,7 +6,7 @@ public class Problem37
         int count = 0;
         for(int i = 11; count < 11; i+=2) 
         {
-            if(isPrime(i) && isTruncatable(i)) 
+            if(isPrime(i) && isTruncatablePrime(i)) 
             {
 				sum += i;
 				count++;
@@ -17,14 +17,14 @@ public class Problem37
 
     public static boolean isTruncatablePrime(int n) 
     {
-        for (int i = 10; i <= num; i *= 10) 
+        for (int i = 10; i <= n; i *= 10) 
         {
-            if (!isPrime(num % i)) 
+            if (!isPrime(n % i)) 
             {
 				return false;
 			}
 		}
-        for(int i = num; i > 0; i /= 10) 
+        for(int i = n; i > 0; i /= 10) 
         {
             if(!isPrime(i)) 
             {
@@ -34,19 +34,19 @@ public class Problem37
 		return true;
     }
 
-    public static boolean isPrime(long z)
+    public static boolean isPrime(int n)
     {
-        if (z == 2)
-        {
-            return true;
-        }
-        for (int i = 2; i < z; i++)
-        {
-            if (z%i == 0)
-            {
-                return false; 
-            }
-        }
-        return true;
+        if(n == 2) {
+			return true;
+		}
+		if(n == 1 || n % 2 == 0) {
+			return false;
+		}
+		for(int i = 3; i * i <= n; i += 2) {
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return true;
     }
 }

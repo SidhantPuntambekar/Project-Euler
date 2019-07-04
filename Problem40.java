@@ -10,11 +10,12 @@ public class Problem40
         int product = 1;
         for(int j = 0; j < 6; j++) 
         {
-			int k = Character.getNumericValue(nums.charAt((int) Math.pow(10, i) - 1));
+			int k = Character.getNumericValue(nums.charAt((int) Math.pow(10, j) - 1));
             if(k != 0) 
             {
-				product *= d;
+				product *= k;
             }
-        } 
+        }
+        System.out.println(product); 
     }
 }

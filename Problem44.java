@@ -4,7 +4,7 @@ public class Problem44
     {
         long difference = 0;
         int i = 2;
-        while (true)
+        while(true)
         {
             long pentagonalI = Pentagonal(i);
             if (difference != 0 && pentagonalI - Pentagonal(i - 1) > difference) 

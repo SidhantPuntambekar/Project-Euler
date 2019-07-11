@@ -20,7 +20,7 @@ public class Problem49
 					}
 				}
 			}
-			if(concatenation.length() > 0)
+			if(concatenated.length() > 0)
 				break;
 		}
 		System.out.println(concatenated);
@@ -45,7 +45,15 @@ public class Problem49
 				}
 			}
 		}
-		int count = 0; 
+		int count = 0;
+		for(int i = lowerBound; i < n; i++) 
+		{
+			if(isPrime[i]) 
+			{
+				count++;
+			}
+		}
+		int[] primes = new int[count];
 		for (int i = lowerBound, j = 0; i < n; i++)
 		{
 			if(isPrime[i])

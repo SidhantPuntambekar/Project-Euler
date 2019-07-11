@@ -24,6 +24,16 @@ public class Problem49
 				}
 			}
 		}
+		int count = 0; 
+		for (int i = lowerBound; j = 0; i < n; i++)
+		{
+			if(isPrime[i])
+			{
+				primes[j] = i;
+				j++;
+			}
+		}
+		return primes;
 	}
 
     public static boolean isPermutation(int n, int m) 

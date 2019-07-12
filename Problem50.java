@@ -7,6 +7,12 @@ public class Problem50
 
         ArrayList<Integer> prime = new ArrayList<Integer>();
         primes.add(2);
+        int p = 3;
+        while (p<1000000)
+        {
+            primes.add(p);
+            p = nextPrime(p);
+        }
     }
 
     public static boolean isPrime(int n)

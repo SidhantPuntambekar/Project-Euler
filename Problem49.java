@@ -6,9 +6,9 @@ public class Problem49
     {
 		int[] primes = listPrimes(10000, 1488);
 		String concatenated = "";
-		for (int i = 0; i <primes.length; i++)
+		for (int i = 0; i < primes.length; i++)
 		{
-			for (int j = 0; j < primes.length; j++)
+			for (int j = i+1; j < primes.length; j++)
 			{
 				int k = primes[j] + (primes[j] - primes[i]);
 				if (k < 10000 && Arrays.binarySearch(primes, k) > -1)

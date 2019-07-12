@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Problem50
 {
     public static void main(String[] args) 
@@ -17,8 +19,18 @@ public class Problem50
         for(int i = 0; i < prime.size(); i++)
         {
             int sum = 0;
-			int j = i;
+            int j = i;
+            while(sum < prime.get(prime.size() - 1))
+            {
+                sum += prime.get(j);
+				if(sum > longNum && j - i> longChain && isPrime(sum)) {
+					longNum = sum;
+					longChain = j - i;
+				}
+				j++;
+            }
         }
+        System.out.println(longNum);
     }
 
     public static boolean isPrime(int n)

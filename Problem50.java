@@ -4,6 +4,9 @@ public class Problem50
     {
         int longChain = 0;
         int longNum = 0;
+
+        ArrayList<Integer> prime = new ArrayList<Integer>();
+        primes.add(2);
     }
 
     public static boolean isPrime(int n)

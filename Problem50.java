@@ -6,12 +6,18 @@ public class Problem50
         int longNum = 0;
 
         ArrayList<Integer> prime = new ArrayList<Integer>();
-        primes.add(2);
+        prime.add(2);
         int p = 3;
         while (p<1000000)
         {
-            primes.add(p);
+            prime.add(p);
             p = nextPrime(p);
+        }
+
+        for(int i = 0; i < prime.size(); i++)
+        {
+            int sum = 0;
+			int j = i;
         }
     }
 

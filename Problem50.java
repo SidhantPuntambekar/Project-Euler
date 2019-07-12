@@ -2,7 +2,8 @@ public class Problem50
 {
     public static void main(String[] args) 
     {
-        
+        int longChain = 0;
+        int longNum = 0;
     }
 
     public static boolean isPrime(int n)

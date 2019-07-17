@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 public class Problem53
 {
     public static void main(String[] args) 
@@ -7,7 +9,7 @@ public class Problem53
         {
             for (int j = 1; j <= i; j++)
             {
-                BigInteger f = factorial(n, r + 1).divide(factorial(n - r, 2));
+                BigInteger f = factorial(i, j + 1).divide(factorial(i - j, 2));
                 if(f.compareTo(new BigInteger("1000000")) > 0) 
                 {
 					count++;
@@ -21,7 +23,7 @@ public class Problem53
     {
         BigInteger factorial = BigInteger.ONE;
         for(int i = r; i <= n; i++) 
-        ß{
+        {
 			factorial = factorial.multiply(BigInteger.valueOf(i));
 		}
 		return factorial;

@@ -11,5 +11,15 @@ public class Problem52
     {
         char[] ch = Integer.toString(n).toCharArray();
         Arrays.sort(ch);
+        for (int i = 2; i <= 6; i++)
+        {
+            char[] mc = Integer.toString(n * i).toCharArray();
+			Arrays.sort(mc);
+            if(!new String(c).equals(new String(mc))) 
+            {
+				return false;
+			}
+        }
+        return true;
     }
 }

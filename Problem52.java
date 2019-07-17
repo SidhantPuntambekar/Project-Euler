@@ -4,4 +4,9 @@ public class Problem52
     {
         
     }
+
+    public static boolean sameDigits(int n)
+    {
+
+    }
 }
